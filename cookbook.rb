@@ -2,7 +2,7 @@ require_relative 'recipe'
 require 'csv'
 require 'pry-byebug'
 require 'open-uri'
-require 'nokogiri'
+# require 'nokogiri'
 
 class CookBook
   attr_reader :recipe_arr_add, :recipes
