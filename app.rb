@@ -8,5 +8,19 @@ configure :development do
 end
 
 get '/' do
-  'Hello hellooooooooooooo!'
+  @usernames = [ 'ssaunier', 'Papillard' ]
+  erb :layout
+end
+
+get '/about' do
+  erb :about
+end
+
+get '/team/:username' do
+  puts params[:username]
+  "The username is #{params[:username]}"
+end
+
+get '/layout' do
+  erb :layout
 end
