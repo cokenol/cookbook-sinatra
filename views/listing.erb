@@ -1,0 +1,8 @@
+<h2>Which recipes to import?</h2>
+
+<ol>
+    <% @scrape.each_with_index do |a, index| %>
+    <li><strong><%= "#{a.name}"%></strong><%=" - #{a.description} - (#{a.rate} / 5) - #{a.prep_time}"%>
+    <a href="/import_this_one/<%=index%>">Import this one</a><br><br></li>
+    <%end %>
+</ol>

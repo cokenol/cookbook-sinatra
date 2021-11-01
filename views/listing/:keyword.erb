@@ -1,0 +1,21 @@
+<h2>Import New Recipe</h2>
+<form action="/views/listing/:keyword" method="get" class="form-example">
+  <div class="form-example">
+    <label for="keyword">Recipe ingredients: </label>
+    <input type="text" name="keyword" id="keyword" required>
+  </div>
+  <div class="form-example">
+    <input type="submit" value="Submit!">
+  </div>
+</form>
+
+<ol>
+  <li>
+    <%= if !@scrape.empty?%>
+      <% @scrape.each do |a| %>
+      <%= "#{a.name} - #{a.description} - (#{a.rate} / 5) - #{a.prep_time}"%>
+      <% end %>
+    <% end %>
+
+  </li>
+</ol>

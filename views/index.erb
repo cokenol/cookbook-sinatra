@@ -1,11 +1,19 @@
-<p>
-  <em>view</em>!
-</p>
-
-<%= Time.now %>
-
-<% @usernames.each do |username| %>
-  <li>
-    <%= username %>
-  </li>
+<div class="title">List of all recipes:</div>
+<div class="list-items"><% @all_recipes.each_with_index do |r, index| %>
+  <%= "#{index + 1}. [#{r.mark_status ? 'X' : '_'}]  #{r.name}. Prep time: #{r.prep_time} - (#{r.rate} / 5)" %>
+  <a href="/mark_as_read/<%=index%>">Mark as read</a>  <a href="/delete/<%=index%>">Delete</a><br>
 <% end %>
+</div>
+
+
+Time: <%= Time.now %>
+<br>
+<a class="btn btn-primary" href="./views/act_add_new_recipe">Add new recipe
+</a>
+<a class="btn btn-primary" href="./views/import_new_recipes">Import new recipe
+</a>
+
+<%# Index
+At the root of your web app (at the / url), you should display your cookbook’s recipes in an unordered list.
+
+Under the list of recipes, add a navigation link (<a>) to the /new url, that we’ll use for the create user story. %>
