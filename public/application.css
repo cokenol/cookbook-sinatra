@@ -21,7 +21,10 @@ h2 {
 form.form-example {
     display: table;
 }
-
+div.container {
+  background-color: azure;
+  opacity: 0.7;
+}
 div.form-example {
     display: table-row;
 }
